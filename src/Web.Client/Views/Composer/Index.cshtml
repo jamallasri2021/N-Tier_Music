@@ -1,0 +1,28 @@
+﻿@model ListComposerViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="col">
+    <a class="btn btn-primary" asp-controller="Composer" asp-action="AddComposer">Add Composer</a>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id composer</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var composer in Model.ListComposer)
+        {
+        <tr>
+            <td class="text-center">@composer.Id</td>
+            <td class="text-center">@composer.FirstName</td>
+            <td class="text-center">@composer.LastName</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
